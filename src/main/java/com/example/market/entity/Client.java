@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Product {
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,17 +22,16 @@ public class Product {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "price", nullable = false)
-    private double price;
+    @Column(name = "email", nullable = false)
+    private String email;
 
-    @Column(name = "quantity")
-    private int quantity;
+    @Column(name = "tel")
+    private String tel;
 
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    private Category category;
+    @Column(name = "cpf", nullable = false)
+    private String cpf;
 
-    @ManyToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
     private List<Order> order;
 
 }

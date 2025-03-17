@@ -1,6 +1,5 @@
 package com.example.market.http.controller;
 
-import org.apache.coyote.Response;
 import org.modelmapper.ModelMapper;
 import com.example.market.entity.Product;
 import com.example.market.service.ProductService;
@@ -23,7 +22,7 @@ public class ProductController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<Product> prodcutList(){
+    public List<Product> productList(){
         return productService.productList();
     }
 
